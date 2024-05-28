@@ -1,0 +1,13 @@
+.vscode
+doc
+*.dSYM
+*.swp
+cc
+ccf
+infile
+outfile
+pipex
+pipex_bonus
+*.o
+*.a
+*.out
