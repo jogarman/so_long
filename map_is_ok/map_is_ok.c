@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 21:26:55 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/28 23:59:16 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ int		map_is_ok(char *argv[])
 
 	printf("no_strange_obj: %d\n", no_strange_obj(one_line_map));
 	printf("number objects ok: %d\n", ok_number_c_e_p(one_line_map));
-	printf("is rectangular: %d\n", is_rectangular(argv));
+	printf("is rectangular: %d\n", is_rectangular(argv, get_map(argv)));
 	printf("wall_ok: %d\n", wall_ok(argv));
 	
-	(void)n_col;
 	(void)n_col;
 	return (n_rows);
 }

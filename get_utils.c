@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:19:42 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 20:56:43 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/28 22:26:18 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ char	*get_one_line_map(char *argv[])
 	close(fd);
 	return (map);
 }
-
 
 
 int		get_n_rows(char *map)
