@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   is_map_null.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 22:52:32 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 20:49:06 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/28 18:58:15 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/28 19:00:40 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-int		main(int argc, char *argv[])
+int		is_map_null(char *map)
 {
-	n_arguments_ok(argc);
-	map_is_ok(argv);
-
-
-/* 	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd)); */
+	if (map == NULL || map[0] == '\n'|| map[0] == '\0')
+	{
+		ft_putstr_fd("Error:\nMap is null or empty or invalid", 2);
+		exit(EXIT_FAILURE);
+	}
+	return (0);
 }

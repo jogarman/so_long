@@ -1,29 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_utils.c                                        :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 12:19:42 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 20:56:43 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/28 20:49:31 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/28 21:10:49 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*get_one_line_map(char *argv[])
+int		get_n_lines(fd)
+{
+	char	*line;
+	int		n_columns;
+	int		first_loop;
+	int 	fd;
+
+	n_columns = 0;
+	first_loop = 1;
+	while (first_loop == 1 || line != NULL)
+	{
+		first_loop = 0;
+		line = get_next_line(fd);
+		if (line != NULL)
+			n_columns++;
+	}
+	free(line);
+	close(fd);
+	return (n_columns);
+}
+
+char	*get_map(char *argv[])
 {
 	char	*line;
 	char	*map;
 	int 	fd;
 	int		first_loop;
 	
-	if ((fd = open(argv[1], O_RDONLY)) < 0)
-	{
-		perror("Error\nFile can not be opened");
-		exit(EXIT_FAILURE);
-	}
+	fd = ft_open(argv[1]);
+	
 	map = "";
 	first_loop = 1;
 	while (first_loop == 1 || line != NULL)
@@ -36,21 +54,4 @@ char	*get_one_line_map(char *argv[])
 	free(line);
 	close(fd);
 	return (map);
-}
-
-
-
-int		get_n_rows(char *map)
-{
-	int		n_rows;
-	char	*break_pos;
-	
-	if (map == NULL || map[0] == '\n' || map[0] == '\0')
-	{
-		ft_putstr_fd("get_n_rows failed", 2);
-		exit(EXIT_FAILURE);
-	}
-	break_pos = ft_strchr((const char*) map, '\n');
-	n_rows = break_pos - map;
-	return n_rows;
 }

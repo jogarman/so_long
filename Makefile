@@ -11,18 +11,14 @@ COLOR_RESET = \033[0m
 
 OBJ = $(SRC:.c=.o)
 
-SRC = so_long.c get_utils.c n_arguments_ok.c map_is_ok.c ft_open.c
-#OBJ_BONUS = $(SRC_BONUS:.c=.o)
+SRC = so_long.c get_utils.c n_arguments_ok.c ft_open.c \
+map_is_ok/is_map_null.c map_is_ok/map_is_ok.c map_is_ok/no_strange_obj.c \
+map_is_ok/ok_number_c_e_p.c map_is_ok/is_rectangular.c map_is_ok/wall_is_ok.c
 
 all: $(NAME)
-$(NAME): $(LIBFT) $(LIBFT) $(OBJ)
+$(NAME): $(LIBFT) $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo "$(GREEN) so_long program created!$(COLOR_RESET)"
-
-#bonus: $(BONUS)
-#$(BONUS): $(LIBFT) $(LIBFT) $(OBJ_BONUS)
-#	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(LIBFT) -o $(BONUS)
-#	@echo "$(GREEN) so_long program created!$(COLOR_RESET)"
 
 $(LIBFT):
 	$(MAKE) -C ./libft
