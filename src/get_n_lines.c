@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   get_n_columns.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 22:52:32 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 01:37:56 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/30 01:18:39 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/30 01:19:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-/* 
-fill flood
-Errores de valgrind de get_map
-*/
-int		main(int argc, char *argv[])
+size_t		get_n_lines(char *argv[])
 {
+	char	*line;
+	size_t	n_lines;
+	int		first_loop;
+	int 	fd;
 
-	n_arguments_ok(argc);
-	map_is_ok(argv);
-	//map = get_map(argv);
-	//free_map(map, 4);
-/* 	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd)); */
+	fd = ft_open(argv[1]);
+	n_lines = 0;
+	first_loop = 1;
+	while (first_loop == 1 || line != NULL)
+	{
+		if (first_loop == 0)
+			free(line);
+		first_loop = 0;
+		line = get_next_line(fd);
+		if (line != NULL)
+			n_lines++;
+	}
+	free(line);
+	close(fd);
+	return (n_lines);
 }

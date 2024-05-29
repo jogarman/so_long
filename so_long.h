@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 00:22:32 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 01:20:50 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ int		ft_open(char *argv);
 
 int		fill_flood(char **map);
 void	free_map(char **map, int size);
+int		y_max_arr(const char **map);
+size_t	get_n_lines(char *argv[]);
+void	print_map(char *argv[]);
 
 /*******  map_is_ok  ********/
 int		map_is_ok(char *argv[]);
