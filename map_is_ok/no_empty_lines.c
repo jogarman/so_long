@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   no_empty_lines.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/25 22:52:32 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 11:30:57 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/29 10:25:31 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/29 10:25:32 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-/* .ber y fill flood*/
-int		main(int argc, char *argv[])
+int	no_empty_lines(char *one_line_map)
 {
-	n_arguments_ok(argc);
-	map_is_ok(argv);
-	get_map(argv);
+	char	prev_char;
+	int		i;
 
-/* 	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd)); */
+	i = 0;
+	while (one_line_map[i] != '\0')
+	{
+		prev_char = one_line_map[i];
+		one_line_map++;
+		if (prev_char == '\n' && one_line_map[0] == '\n')
+			return (-1);
+	}
+	return (0);
 }

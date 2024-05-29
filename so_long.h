@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 23:57:55 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/29 11:40:22 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		map_is_ok(char *argv[]);
 int		no_strange_obj(char	*map);
 int		is_map_null(char *map);
 int		ok_number_c_e_p(char *map);
-int		is_rectangular(char *argv[], char **map);
+int		is_rectangular(char *argv[]);
 int		wall_ok(char *argv[]);
-
+int		no_empty_lines(char *one_line_map);
+int		fill_flood(char *map[]);
