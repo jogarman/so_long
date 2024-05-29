@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   no_strange_obj.c                                   :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 19:03:02 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 19:03:28 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/30 00:10:41 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/30 00:12:01 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-/*Detects if  any other character is present. Exit() if True 0, 1, C, E, P \n */
-int		no_strange_obj(char	*map)
+void	free_map(char **map, int size)
 {
 	int	i;
 	
-	while (map[i] != '\0')
-	{
-		if (map[i] != '0' && map[i] != '1' && map[i] != 'C' && map[i] != 'E' &&
-			map[i] != 'P' && map[i] != '\n')
-		{
-			return (-1);
-		}
-		i++;
-	}
-	return (0);
+	i = 0;
+	if (!map) 
+		return ;
+	while (i < size)
+		free(map[i++]);
+	free(map);
 }

@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ok_number_c_e_p.c                                  :+:      :+:    :+:   */
+/*   no_strange_obj.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 19:05:13 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 19:05:21 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/28 19:03:02 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/29 22:07:40 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-int		ok_number_c_e_p(char *map)
+/*Detects if  any other character is present. Exit() if True 0, 1, C, E, P \n */
+int		no_strange_obj(char	*map)
 {
 	int	i;
-	int	c;
-	int	e;
-	int	p;
 	
 	i = 0;
-	c = 0;
-	e = 0;
-	p = 0;
 	while (map[i] != '\0')
 	{
-		if (map[i] == 'C')
-			c++;
-		if (map[i] == 'E')
-			e++;
-		if (map[i] == 'P')
-			p++;
+		if (map[i] != '0' && map[i] != '1' && map[i] != 'C' && map[i] != 'E' &&
+			map[i] != 'P' && map[i] != '\n')
+		{
+			return (-1);
+		}
 		i++;
 	}
-	if (c > 0 && e == 1 && p == 1)
-		return (0);
-	else 
-		return (-1);
+	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:11:47 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 19:15:20 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/29 23:12:58 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 static	int	only_1_in_line(char *line)
 {
@@ -38,21 +38,21 @@ int			wall_ok(char *argv[])
 	fd = ft_open(argv[1]);
 	line = get_next_line(fd);
 	if (only_1_in_line(line) == -1)
-	{
 		return (-1);
-	}
+	prev_line = ft_strdup(line);
 	while (line != NULL)
 	{
+		free(prev_line);
 		prev_line = ft_strdup(line);
+		free(line);
 		if ((line = get_next_line(fd)))
 			if (line[0] != '1' || line[ft_strlen(line) - 2] != '1')
 				return (-1);
 	}
 	if (only_1_in_line(prev_line) == -1)
-	{
 		return (-1);
-	}
 	free(line);
+	free(prev_line);
 	close(fd);
 	return (0);
 }

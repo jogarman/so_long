@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open.c                                          :+:      :+:    :+:   */
+/*   n_arguments_ok.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 15:55:20 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 22:47:50 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/26 14:25:10 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/29 19:51:36 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-
-int	ft_open(char *name)
+void	n_arguments_ok(int argc)
 {
-	int	fd;
-	
-	if ((fd = open(name, O_RDONLY)) < 0)
+	if (argc != 2)
 	{
-		perror("Error\nFile can not be opened");
+		ft_putstr_fd("Error\nBad arguments", 2);
 		exit(EXIT_FAILURE);
 	}
-	return (fd);
 }

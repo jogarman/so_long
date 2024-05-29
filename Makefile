@@ -4,17 +4,20 @@ LIBFT = ./libft/libft.a
 CC = gcc
 ARFLAGS = -rcs
 AR = ar
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 GREEN= \033[32m
 COLOR_RESET = \033[0m
 
 OBJ = $(SRC:.c=.o)
 
-SRC = so_long.c get_utils.c n_arguments_ok.c ft_open.c get_map.c \
-map_is_ok/is_map_null.c map_is_ok/map_is_ok.c map_is_ok/no_strange_obj.c \
-map_is_ok/ok_number_c_e_p.c map_is_ok/is_rectangular.c map_is_ok/wall_is_ok.c \
-map_is_ok/no_empty_lines.c map_is_ok/fill_flood.c
+SRC = so_long.c \
+src/get_one_line_map.c src/n_arguments_ok.c src/ft_open.c src/get_map.c \
+src/get_obj_pos.c \
+src/map_is_ok/is_map_null.c src/map_is_ok/map_is_ok.c src/map_is_ok/no_strange_obj.c \
+src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wall_is_ok.c \
+src/map_is_ok/no_empty_lines.c src/map_is_ok/fill_flood.c src/map_is_ok/name_is_ok.c \
+src/free_map.c
 
 all: $(NAME)
 $(NAME): $(LIBFT) $(OBJ)

@@ -6,11 +6,13 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:49:31 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/28 23:54:24 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 00:10:31 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
+
+
 
 size_t	get_n_columns(char *argv[])
 {
@@ -38,6 +40,8 @@ size_t		get_n_lines(char *argv[])
 	first_loop = 1;
 	while (first_loop == 1 || line != NULL)
 	{
+		if (first_loop == 0)
+			free(line);
 		first_loop = 0;
 		line = get_next_line(fd);
 		if (line != NULL)
@@ -48,7 +52,10 @@ size_t		get_n_lines(char *argv[])
 	return (n_lines);
 }
 
-/* bug if characters after empty line */
+/* 
+bug if characters after empty line 
+free function is necesary to clean sub-strings
+*/
 char	**get_map(char *argv[])
 {
 	char	*line;
@@ -56,21 +63,45 @@ char	**get_map(char *argv[])
 	int 	fd;
 	int		i;
 
-	map = ft_calloc(get_n_lines(argv), sizeof(char *));
-	fd = ft_open(argv[1]);
+	map = ft_calloc(get_n_lines(argv), sizeof(char *)); //proteger
+	fd = ft_open(argv[1]); //proteger
 	i = 0;
-	line = get_next_line(fd);
-	while ((i == 0 || line != NULL) && line[0] != '\n')
+/*	line = get_next_line(fd);
+ 	while ((i == 0 || line != NULL) && line[0] != '\n')
 	{
-		map[i] = ft_calloc(ft_strlen(line), sizeof(char));
+		map[i] = ft_calloc(ft_strlen(line) + 1, sizeof(char)); //proteger
+		if (!map[i])
+			map_free(**map, i);
  		if (line != NULL && line[ft_strlen(line) - 1] == '\n')
 			ft_memmove(map[i], line, ft_strlen(line) - 1);
 		if (line != NULL && line[ft_strlen(line) - 1] != '\n')
 			ft_memmove(map[i], line, ft_strlen(line));
+		free(line);
 		line = get_next_line(fd);
 		i++;
 	}
 	free(line);
 	close(fd);
 	return (map);
+} */
+    while ((line = get_next_line(fd)) != NULL && line[0] != '\n')
+    {
+        map[i] = ft_calloc(ft_strlen(line) + 1, sizeof(char));
+        if (!map[i])
+        {
+            free_map(map, i);
+            free(line);
+            close(fd);
+            return NULL;
+        }
+        ft_memmove(map[i], line, ft_strlen(line));
+        free(line);
+        i++;
+    }
+
+    free(line);
+    close(fd);
+    return map;
 }
+
+
