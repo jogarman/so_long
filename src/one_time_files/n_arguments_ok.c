@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   y_max_arr.c                                        :+:      :+:    :+:   */
+/*   n_arguments_ok.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 00:40:54 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 13:58:00 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/26 14:25:10 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/30 18:13:46 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-int y_max_arr(const char **map)
+void	n_arguments_ok(int argc)
 {
-	int i;
-
-	i = 0;
-	while (map[i] != NULL)
+	if (argc != 2)
 	{
-		i++;
+		ft_putstr_fd("Error\nBad arguments", 2);
+		exit(EXIT_FAILURE);
 	}
-	return (i);
 }

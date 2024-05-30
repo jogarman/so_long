@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_n_columns.c                                    :+:      :+:    :+:   */
+/*   get_one_line_map.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 01:18:39 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 01:19:21 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/26 12:19:42 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/05/30 18:13:19 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
-
-size_t		get_n_lines(char *argv[])
+#include "../../so_long.h"
+/*
+char	*get_one_line_map(char *argv[], char *fd)
+fd value is nor important. Just *norminette*
+*/
+char	*get_one_line_map(char *argv[], int fd)
 {
 	char	*line;
-	size_t	n_lines;
+	char	*map;
+	char	*map_2;
 	int		first_loop;
-	int 	fd;
-
+	
 	fd = ft_open(argv[1]);
-	n_lines = 0;
+	map = "";
 	first_loop = 1;
 	while (first_loop == 1 || line != NULL)
 	{
 		if (first_loop == 0)
 			free(line);
-		first_loop = 0;
 		line = get_next_line(fd);
 		if (line != NULL)
-			n_lines++;
+		{
+			map_2 = ft_calloc((ft_strlen(map) + 1), sizeof(char));
+			ft_strlcpy(map_2, map, ft_strlen(map));
+			if (first_loop == 0)
+				free(map);
+			map = ft_strjoin(map_2, line);
+			free(map_2);
+		}
+		first_loop = 0;
 	}
-	free(line);
-	close(fd);
-	return (n_lines);
+	return (free(line), close(fd), map);
 }
