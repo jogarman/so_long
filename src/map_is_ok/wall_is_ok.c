@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:11:47 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 23:12:58 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:22:33 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ static	int	only_1_in_line(char *line)
 	while (line[i] != '\n' && line[i] != '\0')
 	{
 		if (line[i] != '1')
-		{
-			printf("only_1_line: line[i] = %c\n", line[i]);
 			return (-1);
-		}
 		i++;
 	}
 	return (0);

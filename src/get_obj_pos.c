@@ -6,19 +6,19 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 19:37:29 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 20:50:21 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 14:09:49 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-/* 
-imputs:
+/* imputs:
 	-map
 	-object. 'P' or 'E' 
 	-'x' or 'y' you want to return
-returns x or y of Player (P)
-*/
+returns:
+	- x or y of object
+	- if doesn´t find it*/
 int get_obj_pos(char **map, char obj, char c)
 {
 	int		y;

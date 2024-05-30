@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 01:20:50 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:10:59 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct parse_err
 }	parse_err;
 
 /*********pos ? *********/
-int	get_obj_pos(char **map, char object, char c);
+int		get_obj_pos(char **map, char object, char c);
 /******** src ***********/
 char	**get_map(char *argv[]);
 char	*get_one_line_map(char *argv[], int fd);
@@ -33,8 +33,8 @@ int		is_map_null(char *map);
 void	n_arguments_ok(int argc);
 int		ft_open(char *argv);
 
-int		fill_flood(char **map);
-void	free_map(char **map, int size);
+int		flood_fill_ok(char **argv);
+void	free_map(char **map);
 int		y_max_arr(const char **map);
 size_t	get_n_lines(char *argv[]);
 void	print_map(char *argv[]);

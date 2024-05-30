@@ -6,36 +6,39 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 00:54:35 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:25:55 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int		map_is_ok(char *argv[])
+void	err_exit(char *error, char *one_line_map)
 {
-//	int		n_rows;
-	int		n_col;
-	char	*one_line_map;
-	char	**map;
-	
-	one_line_map = get_one_line_map(argv, 3);
-	is_map_null(one_line_map);
-
-	printf("name is ok: %d\n", name_is_ok(argv[1]));
-	printf("no empty lines: %d\n", no_empty_lines(one_line_map));
-	if (no_empty_lines(one_line_map) != -1)
-		printf("wall_ok: %d\n", wall_ok(argv));
-	printf("no_strange_obj: %d\n", no_strange_obj(one_line_map));
-	printf("number objects ok: %d\n", ok_number_c_e_p(one_line_map));
-	if (!no_empty_lines(one_line_map))
-		printf("is rectangular: %d\n", is_rectangular(argv));
-	
-
-	map = get_map(argv);
-	printf("fill flood ok: %d\n", fill_flood(map));
-	//free_map(map, 5);
+	ft_putstr_fd(error, 2);
 	free(one_line_map);
-	(void)n_col;
-	return (0);
+	exit(-1);
+}
+
+int	map_is_ok(char *argv[])
+{
+	char	*one_line_map;
+
+	one_line_map = get_one_line_map(argv, 3);
+	if (name_is_ok(argv[1]))
+		err_exit("Error:\n-Map extension must be .ber", one_line_map);
+	if (is_map_null(one_line_map))
+		err_exit("Error:\n-Map is Null", one_line_map);
+	if (no_empty_lines(one_line_map))
+		err_exit("Error:\n-Map has empty lines", one_line_map);
+	if (no_strange_obj(one_line_map))
+		err_exit("Error:\n-There are strange objects in map", one_line_map);
+	if (ok_number_c_e_p(one_line_map))
+		err_exit("Error:\n-Wrong number of objects", one_line_map);
+	if (is_rectangular(argv))
+		err_exit("Error:\n-Map is not rectangular", one_line_map);
+	if (wall_ok(argv))
+		err_exit("Error:\n-Map wall is not ok", one_line_map);
+	if (flood_fill_ok(argv))
+		err_exit("Error:\n-Map doesn't have a solution", one_line_map);
+	return (free(one_line_map), 0);
 }

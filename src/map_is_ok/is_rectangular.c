@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:08:12 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 23:33:21 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:43:53 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int		ft_strlen_without_last_br(char *line)
 		return (ft_strlen(line));
 }
 
-/* si el ultimo caracter  no es salto de linea -> suma 1 a la longitud de la linea */
 int		is_rectangular(char *argv[])
 {
 	char	*line;

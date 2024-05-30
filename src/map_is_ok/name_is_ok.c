@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:48:11 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 23:56:29 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:51:57 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ int	name_is_ok(char *map_name)
 	i = ft_strlen(map_name) - 1;
 	if (i <= 3)
 	{
-		ft_putstr_fd("map extension must be .ber", 2);
 		return (-1);
 	}
-
 	i = ft_strlen(map_name) - 4;
 	j = 0;
 	while(map_name[i] != '\0' && str[j] != '\0' && map_name[i] == str[j])
