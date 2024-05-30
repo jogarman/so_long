@@ -11,3 +11,4 @@ pipex_bonus
 *.o
 *.a
 *.out
+*DS*

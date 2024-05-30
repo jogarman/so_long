@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 18:07:28 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:17:35 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,24 @@ typedef struct parse_err
 	char	*row_err;
 }	parse_err;
 
-/*********pos ? *********/
-int		get_obj_pos(char **map, char object, char c);
-/******** src ***********/
-char	**get_map(char *argv[]);
-char	*get_one_line_map(char *argv[], int fd);
-
-int		get_n_rows(char *map);
-void	n_arguments_ok(int argc);
-int		ft_open(char *argv);
-
-void	free_map(char **map);
-int		y_max_arr(const char **map);
+/*****  one_time_files ******/
 size_t	get_n_lines(char *argv[]);
+int		y_max_arr(const char **map);
+char	*get_one_line_map(char *argv[], int fd);
+void	n_arguments_ok(int argc);
+
+/*****  src ***********/
+int		ft_open(char *argv);
+char	**get_map(char *argv[]);
+int		get_obj_pos(char **map, char object, char c);
+void	free_map(char **map);
 
 
+/*****  not_used   ********/
 void	print_map(char *argv[]); //se usa?
+int		get_n_rows(char *map);
 
-
-/*******  map_is_ok  ********/
+/*****  map_is_ok  ********/
 int		map_is_ok(char *argv[]);
 int		no_strange_obj(char	*map);
 int		is_map_null(char *map);

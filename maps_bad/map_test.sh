@@ -1,4 +1,5 @@
 #!/bin/bash
+#mover a la carpeta raiz de so_long
 
 # Directorio que contiene los archivos de mapa
 MAP_DIR="maps_bad"
