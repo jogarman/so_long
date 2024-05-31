@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 18:17:35 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:16:20 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # include <sys/wait.h>
 # include "libft/libft.h"
 
-typedef struct parse_err
-{
-	char	*row_err;
-}	parse_err;
 
 /*****  one_time_files ******/
 size_t	get_n_lines(char *argv[]);
@@ -36,8 +32,8 @@ void	free_map(char **map);
 
 
 /*****  not_used   ********/
-void	print_map(char *argv[]); //se usa?
-int		get_n_rows(char *map);
+//void	print_map(char *argv[]); //se usa?
+//int		get_n_rows(char *map);
 
 /*****  map_is_ok  ********/
 int		map_is_ok(char *argv[]);
