@@ -10,13 +10,19 @@
 
 ## Please use configure script
 
+MAGENTA = \033[36m
+COLOR_RESET = \033[0m
 
 all	: do_configure
 
 do_configure	:
-	./configure
+	@./configure
+	@echo "$(MAGENTA) Libx compiled successfully 👾 $(COLOR_RESET)"
 
 clean	:
+	./configure clean
+
+fclean	:
 	./configure clean
 
 re	: clean all

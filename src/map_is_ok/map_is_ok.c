@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 17:25:55 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/09/30 19:05:55 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ int	map_is_ok(char *argv[])
 		err_exit("Error:\n-Map wall is not ok", one_line_map);
 	if (flood_fill_ok(argv))
 		err_exit("Error:\n-Map doesn't have a solution", one_line_map);
-	return (free(one_line_map), 0);
+	return (free(one_line_map), 1);
 }

@@ -35,6 +35,9 @@ $(NAME): $(OBJ)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 	@echo "$(GREEN) Libft objects and $(GNL) succesfully done!$(COLOR_RESET)"
 
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	@rm -f $(OBJ)
 	@echo "$(GREEN)clean succesful!$(COLOR_RESET)"
