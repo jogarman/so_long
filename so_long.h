@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/09/30 19:30:20 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:16:02 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ typedef struct s_game
 	void		*floor_img;
 
 }	t_game;
+
+typedef struct s_textures
+{
+	void	*hero;
+	void	*collectable;
+	void	*exit;
+	void	*wall;
+	void	*floor;
+} s_textures;
+
 
 /*****  one_time_files ******/
 size_t	get_n_lines(char *argv[]);
@@ -62,3 +72,6 @@ int		wall_ok(char *argv[]);
 int		no_empty_lines(char *one_line_map);
 int		flood_fill_ok(char **argv);
 int		name_is_ok(char *prog_name);
+
+/*****  draw_map  ********/
+s_textures load_textures();

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/08 16:39:30 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:13:38 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,37 +38,36 @@ void keyhook(mlx_key_data_t keydata, void* param)
 
 int32_t	main(void)
 {
-	// Start mlx
 	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
 	if (!mlx)
         error();
-
-	// Try to load the file
+	load_textures();
+	/*
 	mlx_texture_t* texture_me = mlx_load_png("./textures/me.png");
 	mlx_texture_t* texture_tile = mlx_load_png("./textures/tile.png");
 	if (!texture_tile)
         error();
-	
-	// Convert texture to a displayable image
+		
 	mlx_image_t* img_tile = mlx_texture_to_image(mlx, texture_tile);
 	mlx_image_t* img_me = mlx_texture_to_image(mlx, texture_me);
 	if (!img_tile)
         error();
 
-	// Display the image
 	if (mlx_image_to_window(mlx, img_tile, 0, 0) < 0)
-        error();
+		error();
 	if (mlx_image_to_window(mlx, img_me, 0, 0) < 0)
         error();
-
+	
 	mlx_key_hook(mlx, &keyhook, img_me);
 	mlx_loop(mlx);
 	
-	img_me->instances[0].x = 100;
-
 	// Optional, terminate will clean up any leftovers, this is just to demonstrate.
 	mlx_delete_image(mlx, img_tile);
 	mlx_delete_texture(texture_tile);
-	mlx_terminate(mlx);
+	mlx_terminate(mlx);*/
+	mlx_loop(mlx);
+	//mlx_delete_image(mlx, img_tile);
+	//mlx_delete_texture(texture_tile);
+	//mlx_terminate(mlx);*/
 	return (EXIT_SUCCESS);
 }
