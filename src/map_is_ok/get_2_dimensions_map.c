@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:28:31 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 21:10:36 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:53:04 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	**get_2_dimensions_map(char *argv[])
 		i++;
 	}
 	map[i] = '\0';
+	print_2_dimensions_map(map);
 	close(fd);
 	return (map);
 }

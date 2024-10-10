@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 20:47:31 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 22:31:01 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # include "libft/libft.h"
 # include "MLX42.h"
 
-#define WIDTH 512
-#define HEIGHT 288
+#define CAVAS_SIZE 64
 
 typedef struct s_game 
 {
@@ -85,8 +84,9 @@ int		no_empty_lines(char *one_line_map);
 int		flood_fill_ok(char **argv);
 int		name_is_ok(char *prog_name);
 char	**get_2_dimensions_map(char *argv[]);
+int		max_x_y_ok(char** map);
 
 /*****  draw_map  ********/
 void	draw_map(s_img img, char **map, mlx_t* mlx);
 s_img	load_img(mlx_t* mlx);
-mlx_t*	create_window(char* title);
+mlx_t*	create_window(char* title, char** map);

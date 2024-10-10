@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 20:49:26 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 22:41:40 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	**map_is_ok(char *argv[])
 	if (flood_fill_ok(argv))
 		err_exit("Error:\n-Map doesn't have a solution", one_line_map);
 	map = get_2_dimensions_map(argv);
+	if (max_x_y_ok(map))
+		err_exit("Error:\n-Map so big", one_line_map);
 	return (free(one_line_map), map);
 }

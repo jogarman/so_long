@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 21:13:21 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 23:03:26 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ void keyhook(mlx_key_data_t keydata, void* param)
 	if ((keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT) && keydata.action == MLX_PRESS)
 		puts("d");
 }
+
+
+//create_window corregir problema con mapas en el limite
 int32_t	main(int n, char *argv[])
 {
 	mlx_t*		mlx;
@@ -40,22 +43,19 @@ int32_t	main(int n, char *argv[])
 	
 	n_arguments_ok(n);
 	map = map_is_ok(argv);
-	mlx = create_window(argv[1]);
+	printf("--eee--");
+	mlx = create_window(argv[1], map);
+	printf("--eee--");
 	img = load_img(mlx);
 	// hasta aqui bien
-
-	printf("eeeeeee");
 	draw_map(img, map, mlx);
 
 
-	mlx_key_hook(mlx, &keyhook, img.hero);
+	//mlx_key_hook(mlx, &keyhook, img.hero);
 	mlx_loop(mlx);
 	
 
 	mlx_terminate(mlx);
 	mlx_loop(mlx);
-	//mlx_delete_image(mlx, img_floor);
-	//mlx_delete_texture(texture_tile);
-	//mlx_terminate(mlx);*/
-	//return (EXIT_SUCCESS);
+
 }
