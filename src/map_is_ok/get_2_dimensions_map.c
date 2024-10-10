@@ -1,37 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_n_lines.c                                      :+:      :+:    :+:   */
+/*   get_2_dimensions_map.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 01:18:39 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 21:00:33 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/10/10 20:28:31 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/10/10 21:10:36 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-size_t		get_n_lines(char *argv[])
+/* only for testing purposes */
+void print_2_dimensions_map(char **map) 
 {
+    int i = 0;
+
+    while (map[i] != NULL)
+    {
+        printf("%s\n", map[i]);
+        i++;
+    }
+}
+
+char	**get_2_dimensions_map(char *argv[])
+{
+	int		i;
+	int 	fd;
+	char	**map;
 	char	*line;
 	size_t	n_lines;
-	int		first_loop;
-	int 	fd;
-
+	int		int_n_lines;
+	
+	n_lines = (int)get_n_lines(argv);  
+	map = malloc(sizeof(char *) * n_lines);
 	fd = ft_open(argv[1]);
-	n_lines = 0;
-	first_loop = 1;
-	while (first_loop == 1 || line != NULL)
+	i = 0;
+	while (i != n_lines)
 	{
-		if (first_loop == 0)
-			free(line);
-		first_loop = 0;
 		line = get_next_line(fd);
-		if (line != NULL)
-			n_lines++;
+		map[i] = malloc(sizeof(char) * ft_strlen(line));
+		map[i] = line;
+		i++;
 	}
-	free(line);
+	map[i] = '\0';
 	close(fd);
-	return (n_lines);
+	return (map);
 }

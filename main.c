@@ -6,14 +6,12 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 19:01:23 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:13:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "so_long.h"
-
-
 
 static void error(void)
 {
@@ -38,28 +36,22 @@ int32_t	main(int n, char *argv[])
 {
 	mlx_t*		mlx;
 	s_img 		img;
+	char**		map;
 	
 	n_arguments_ok(n);
-	map_is_ok(argv);
+	map = map_is_ok(argv);
 	mlx = create_window(argv[1]);
 	img = load_img(mlx);
 	// hasta aqui bien
 
-	
-	if (!img.floor)
-        error();
-	if (mlx_image_to_window(mlx, img.floor, 0, 0) < 0)
-		error();
-	if (mlx_image_to_window(mlx, img.hero, 0, 0) < 0)
-        error();
+	printf("eeeeeee");
+	draw_map(img, map, mlx);
 
 
 	mlx_key_hook(mlx, &keyhook, img.hero);
 	mlx_loop(mlx);
 	
-	// Optional, terminate will clean up any leftovers, this is just to demonstrate.
-	mlx_delete_image(mlx, img.floor);
-	//mlx_delete_texture(texture_floor); eliminar todas las texturas
+
 	mlx_terminate(mlx);
 	mlx_loop(mlx);
 	//mlx_delete_image(mlx, img_floor);

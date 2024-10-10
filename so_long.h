@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 18:51:41 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:47:31 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	end_program(t_game game);
 
 
 /*****  map_is_ok  ********/
-int		map_is_ok(char *argv[]);
+char	**map_is_ok(char *argv[]);
 int		no_strange_obj(char	*map);
 int		is_map_null(char *map);
 int		ok_number_c_e_p(char *map);
@@ -84,7 +84,9 @@ int		wall_ok(char *argv[]);
 int		no_empty_lines(char *one_line_map);
 int		flood_fill_ok(char **argv);
 int		name_is_ok(char *prog_name);
+char	**get_2_dimensions_map(char *argv[]);
 
 /*****  draw_map  ********/
+void	draw_map(s_img img, char **map, mlx_t* mlx);
 s_img	load_img(mlx_t* mlx);
 mlx_t*	create_window(char* title);
