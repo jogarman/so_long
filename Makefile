@@ -21,15 +21,15 @@ SRC = main.c \
 src/map_is_ok/is_map_null.c src/map_is_ok/map_is_ok.c src/map_is_ok/no_strange_obj.c \
 src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wall_is_ok.c \
 src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
+src/one_time_files/load_img.c	src/one_time_files/create_window.c \
 \
 src/one_time_files/get_n_lines.c src/one_time_files/get_one_line_map.c \
 src/one_time_files/n_arguments_ok.c src/one_time_files/y_max_arr.c \
 \
 src/ft_open.c src/get_map.c src/get_obj_pos.c src/free_map.c \
 \
-src/end_program.c \
-\
-src/load_textures.c
+src/end_program.c
+
 
 # src/print_map.c 
 

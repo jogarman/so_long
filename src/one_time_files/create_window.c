@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   n_arguments_ok.c                                   :+:      :+:    :+:   */
+/*   create_window.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 17:38:07 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 17:51:41 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/10/10 18:28:45 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/10/10 18:46:58 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-/* if number arguments ok, return 1, if not ok exit(-1)*/
-void	n_arguments_ok(int n)
+
+mlx_t* create_window(char* title)
 {
-	if (n != 2)
-	{
-		printf("One argument must be provided\n");
-		exit(EXIT_FAILURE);
-	}
+	mlx_t* mlx;
+
+	mlx = mlx_init(WIDTH, HEIGHT, title, true);
+	if (!mlx)
+		error();
+	return (mlx);
 }

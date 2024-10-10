@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/08 17:16:02 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/10 18:51:41 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "libft/libft.h"
 # include "MLX42.h"
 
+#define WIDTH 512
+#define HEIGHT 288
 
 typedef struct s_game 
 {
@@ -41,6 +43,15 @@ typedef struct s_textures
 	void	*floor;
 } s_textures;
 
+typedef struct s_img
+{
+	void	*hero;
+	void	*collectable;
+	void	*exit;
+	void	*wall;
+	void	*floor;
+} s_img;
+
 
 /*****  one_time_files ******/
 size_t	get_n_lines(char *argv[]);
@@ -62,6 +73,7 @@ void	end_program(t_game game);
 //void	print_map(char *argv[]); //se usa?
 //int		get_n_rows(char *map);
 
+
 /*****  map_is_ok  ********/
 int		map_is_ok(char *argv[]);
 int		no_strange_obj(char	*map);
@@ -74,4 +86,5 @@ int		flood_fill_ok(char **argv);
 int		name_is_ok(char *prog_name);
 
 /*****  draw_map  ********/
-s_textures load_textures();
+s_img	load_img(mlx_t* mlx);
+mlx_t*	create_window(char* title);
