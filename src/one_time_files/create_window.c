@@ -6,12 +6,17 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:28:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 22:48:38 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:02:45 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
+static void error(void)
+{
+	puts(mlx_strerror(mlx_errno));
+	exit(EXIT_FAILURE);
+}
 
 mlx_t* create_window(char* title, char** map)
 {

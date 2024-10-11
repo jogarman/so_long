@@ -38,32 +38,30 @@ src/end_program.c
 
 all: $(NAME)
 $(NAME):  $(OBJ) $(LIBFT) libmlx
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(LIBS) -o $(NAME) $(HEADERS)
-	echo "$(GREEN)$(BOLD) So_long program created!$(COLOR_RESET)"
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(LIBS) -o $(NAME) $(HEADERS)
+	@echo "$(GREEN)$(BOLD) So_long program created!$(COLOR_RESET)"
 
 $(OBJ_DIR)/%.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(HEADERS)
 
 $(LIBFT):
-	$(MAKE) -C ./libft
+	@$(MAKE) -C ./libft
 
 libmlx:
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
 
 clean:
-	rm -f $(OBJ) $(NAME)
-	$(MAKE) -C libft clean
+	@rm -f $(OBJ) $(NAME)
+	@$(MAKE) -C libft clean
 
 fclean: clean
-	rm -f $(LIBFT)
-	$(MAKE) -C libft fclean
+	@rm -f $(LIBFT)
+	@$(MAKE) -C libft fclean
 
 re: fclean all
 
 g3:
 	@gcc $(SRC) libft/*.c -g3 -Imlx -o so_long
-
-# para compilar sin flags escribe: CFLAGS=
 
 .PHONY: all clean fclean re g3

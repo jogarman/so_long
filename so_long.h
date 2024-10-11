@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 22:31:01 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:20:00 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,6 @@
 
 #define CAVAS_SIZE 64
 
-typedef struct s_game 
-{
-	void		*mlx_ptr;
-	void		*win_ptr;
-
-	void		*door_open_img;
-	void		*door_close_img;
-	void		*key_img;
-	void		*wall_img;
-	void		*floor_img;
-
-}	t_game;
-
 typedef struct s_textures
 {
 	void	*hero;
@@ -40,7 +27,7 @@ typedef struct s_textures
 	void	*exit;
 	void	*wall;
 	void	*floor;
-} s_textures;
+} t_textures;
 
 typedef struct s_img
 {
@@ -49,7 +36,14 @@ typedef struct s_img
 	void	*exit;
 	void	*wall;
 	void	*floor;
-} s_img;
+} t_img;
+
+typedef struct s_game 
+{
+	mlx_t*	mlx;
+	t_img	images;
+	char**	map;
+}	t_game;
 
 
 /*****  one_time_files ******/
@@ -87,6 +81,6 @@ char	**get_2_dimensions_map(char *argv[]);
 int		max_x_y_ok(char** map);
 
 /*****  draw_map  ********/
-void	draw_map(s_img img, char **map, mlx_t* mlx);
-s_img	load_img(mlx_t* mlx);
+void	draw_map(t_img img, char **map, mlx_t* mlx);
+t_img	load_img(mlx_t* mlx);
 mlx_t*	create_window(char* title, char** map);

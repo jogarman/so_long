@@ -6,14 +6,14 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:51:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 22:47:19 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:20:13 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 #include <stdio.h>
 
-void	draw_map(s_img img, char **map, mlx_t* mlx)
+void	draw_map(t_img img, char **map, mlx_t* mlx)
 {
 	int		x;
 	int		y;
@@ -22,6 +22,7 @@ void	draw_map(s_img img, char **map, mlx_t* mlx)
 	x = 0;
 	y = 0;
 	tile_size = 64;
+
 	while (map[y])
 	{
 		x = 0;
@@ -41,4 +42,5 @@ void	draw_map(s_img img, char **map, mlx_t* mlx)
 		}
 		y++;
 	}
+
 }

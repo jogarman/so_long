@@ -6,13 +6,13 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 15:19:54 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/06/02 15:42:01 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 14:30:05 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	end_program(t_game game)
+void	end_program(s_game game)
 {
 	(void)(game);
 	exit(0);

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 20:28:31 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 21:53:04 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:07:51 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ void print_2_dimensions_map(char **map)
 
 char	**get_2_dimensions_map(char *argv[])
 {
-	int		i;
+	size_t	i;
 	int 	fd;
 	char	**map;
 	char	*line;
 	size_t	n_lines;
-	int		int_n_lines;
-	
+
 	n_lines = (int)get_n_lines(argv);  
 	map = malloc(sizeof(char *) * n_lines);
+
 	fd = ft_open(argv[1]);
 	i = 0;
 	while (i != n_lines)
@@ -44,8 +44,8 @@ char	**get_2_dimensions_map(char *argv[])
 		map[i] = line;
 		i++;
 	}
+	//print_2_dimensions_map(map);
 	map[i] = '\0';
-	print_2_dimensions_map(map);
 	close(fd);
 	return (map);
 }

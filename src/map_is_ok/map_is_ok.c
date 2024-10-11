@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 22:41:40 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:59:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**map_is_ok(char *argv[])
 {
 	char	*one_line_map;
 	char	**map;
-	
+
 	one_line_map = get_one_line_map(argv, 3);
 	if (name_is_ok(argv[1]))
 		err_exit("Error:\n-Map extension must be .ber", one_line_map);
@@ -44,5 +44,6 @@ char	**map_is_ok(char *argv[])
 	map = get_2_dimensions_map(argv);
 	if (max_x_y_ok(map))
 		err_exit("Error:\n-Map so big", one_line_map);
+
 	return (free(one_line_map), map);
 }
