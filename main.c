@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 09:27:22 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:59:30 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@
 int	mv_up(t_game game)
 {
 	int	pos_p[2];
+	char	obj;
 	
-	print_map(game.map);
 	pos_p[0] = get_obj_pos(game.map, 'P', 'x');
 	pos_p[1] = get_obj_pos(game.map, 'P', 'y');
-	printf("x: %d, y: %d\n", pos_p[0], pos_p[1]);
+	printf("pos_p: %d ,%d\n", pos_p[0], pos_p[1]);
+	obj = 'P';
+	pos_p[1] --;
+	draw_new_img(game, pos_p, obj);
+	draw_new_img(game, pos_p, obj);
+
 	return (1);
 }
 
@@ -40,7 +45,10 @@ void keyhook(mlx_key_data_t keydata, void *params)
 		puts("a");
 	}
 	if ((keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP) && keydata.action == MLX_PRESS)
+	{
+		mv_up(*game);
 		puts("w");
+	}	
 	if ((keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_DOWN) && keydata.action == MLX_PRESS)
 		puts("s");
 	if ((keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT) && keydata.action == MLX_PRESS)
@@ -49,7 +57,15 @@ void keyhook(mlx_key_data_t keydata, void *params)
 		mlx_close_window(game->mlx); // da seg fault
 }
 
-/* get_obj_pos DE LA FUNCION mv_up NO ENCUENTRA LOS OBJETOS Y NO SE POR QUÉ */
+
+/* continuar  con mover el hero.
+falta:
+- ocultar la salida
+- concretar cuando visualizar la salida
+- poner el contador de movimientos
+- mover el hero
+- restringir movimiento del hero
+*/
 int32_t	main(int n, char *argv[])
 {
 	t_img 		img;
@@ -58,12 +74,12 @@ int32_t	main(int n, char *argv[])
 	n_arguments_ok(n);
 	//printf("main\n");
 	game.map = map_is_ok(argv, game);
+	get_initial_parameters(&game);
 	game.mlx = create_window(argv[1], game.map);
 	game.images = load_img(game.mlx);
 	draw_map(game.images, game.map, game.mlx);
 
 	mlx_key_hook(game.mlx, &keyhook, &game);
-	//mlx_key_hook(mlx, &keyhook, img.hero);
 	mlx_loop(game.mlx);
 	mlx_terminate(game.mlx);
 }

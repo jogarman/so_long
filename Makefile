@@ -24,7 +24,9 @@ src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c\
 \
 src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
 \
+src/draw/draw_new_img.c\
 src/one_time_files/load_img.c src/one_time_files/create_window.c src/one_time_files/draw_map.c \
+src/one_time_files/get_initial_parameters.c\
 \
 src/one_time_files/get_n_lines.c src/one_time_files/get_one_line_map.c \
 src/one_time_files/n_arguments_ok.c src/one_time_files/y_max_arr.c \

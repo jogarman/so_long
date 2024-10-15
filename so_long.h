@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 08:01:32 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:35:27 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ typedef struct s_game
 	mlx_t	*mlx;
 	t_img	images;
 	char	**map;
+	int		p_pos[2];
+	int		exit_enable;
+	int		n_collectables;
 }	t_game;
 
 
@@ -51,6 +54,7 @@ size_t	get_n_lines(char *argv[]);
 int		y_max_arr(char **map);
 char	*get_one_line_map(char *argv[], int fd);
 void	n_arguments_ok(int argc);
+void	get_initial_parameters(t_game *game);
 
 /********  src ***********/
 int		ft_open(char *argv);
@@ -58,6 +62,8 @@ char	**get_map(char *argv[]);
 int		get_obj_pos(char **map, char object, char c);
 void	free_map(char **map);
 
+/******** obj  ***********/
+void	draw_new_img(t_game g, int xy[2], char obj);
 /******** game ***********/
 void	end_program(t_game game);
 
@@ -65,7 +71,6 @@ void	end_program(t_game game);
 /*****  not_used   ********/
 void	print_map(char **map); //se usa?
 //int		get_n_rows(char *map);
-
 
 /*****  map_is_ok  ********/
 char	**map_is_ok(char *argv[], t_game game);

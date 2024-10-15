@@ -6,12 +6,13 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 08:26:28 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:51:28 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
+/* POR HACER */
 void free_game(t_game game)
 {
 	game.mlx = NULL;
