@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 19:37:29 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/11 15:44:02 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 07:59:15 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int get_obj_pos(char **map, char obj, char xy)
 	x = 0;
 	while (map_dup[y] != NULL && (xy == 'y' || xy == 'x') && (obj == 'P' || obj == 'E'))
 	{
-		printf("-----get_obj_pos----");
+		//printf("-----get_obj_pos----");
 		while (map_dup[y][x] != '\0')
 		{
 			if (map_dup[y][x] == obj && xy == 'y')
 				return (map_dup - map);
 			if (map_dup[y][x] == obj && xy == 'x')
 				return (x);
-			printf("x: %d\n y: %d\n", x, y);
+			//printf("x: %d\n y: %d\n", x, y);
 			x++;
 		}
 		x = 0;

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:27:26 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/11 12:58:54 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 08:27:13 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 /* x = 3840, y = 2160 
 cells: (60.0, 33.75) - 2 of margin
 */
-int		max_x_y_ok(char** map)
+int		max_x_y_ok(char **map)
 {
 	int		x;
 	int		y;
 
-	x = (ft_strlen(map[0]));
-	y = y_max_arr((const char**)map);
+	x = ft_strlen((const char*)map[0]);
+	y = y_max_arr(map);
 	if ((x > 58 || y > 32))
 		return (1); 
 	return (0);

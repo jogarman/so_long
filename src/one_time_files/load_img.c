@@ -6,17 +6,17 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:58:55 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/10 19:00:05 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 07:49:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 //	printf("\nhola\n");
 
-s_img	load_img(mlx_t* mlx)
+t_img	load_img(mlx_t* mlx)
 {
-	s_textures	textures;
-	s_img 		img;
+	t_textures	textures;
+	t_img 		img;
 	
 	textures.hero = mlx_load_png("./textures/me.png");
 	textures.collectable = mlx_load_png("./textures/money.png");

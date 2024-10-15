@@ -6,13 +6,13 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:40:54 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 18:13:28 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/15 07:41:28 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int y_max_arr(const char **map)
+int y_max_arr(char **map)
 {
 	int i;
 
