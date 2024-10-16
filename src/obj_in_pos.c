@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_window.c                                    :+:      :+:    :+:   */
+/*   object_in_pos.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 18:28:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/16 15:24:47 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/10/16 14:36:30 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/10/16 15:08:27 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../so_long.h"
 
-static void error(void)
+char	obj_in_pos(t_game game, int x, int y)
 {
-	puts(mlx_strerror(mlx_errno));
-	exit(EXIT_FAILURE);
-}
-
-mlx_t* create_window(char* title, char** map)
-{
-	mlx_t*	mlx;
-	int		height;
-	int		width;
-	
-	height = (ft_strlen(map[0]) - 1) * CAVAS_SIZE;
-	width = y_max_arr((const char**)map) * CAVAS_SIZE;
-	
-	mlx = mlx_init(height, width, title, false);
-	if (!mlx)
-		error();
-	return (mlx);
+	return(game.map[y][x]);
 }

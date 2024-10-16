@@ -1,0 +1,7 @@
+funciones cuando mueve
+
+rutinas:
+- ir a 0 ó Exit[no_enable] o P **mover**
+- ir a c					   **mover**
+- Salir
+- No ir a pared

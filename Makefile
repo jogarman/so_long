@@ -33,7 +33,7 @@ src/one_time_files/n_arguments_ok.c src/one_time_files/y_max_arr.c \
 \
 src/ft_open.c src/get_map.c src/get_obj_pos.c src/free_map.c \
 \
-src/end_program.c\
+src/end_program.c src/obj_in_pos.c\
 \
 src/print_map.c 
 
