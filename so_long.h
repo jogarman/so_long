@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/16 15:31:20 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:08:22 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		ft_open(char *argv);
 char	**get_map(char *argv[]);
 int		get_obj_pos(char **map, char object, char c);
 void	free_map(char **map);
-char	obj_in_pos(t_game game, int x, int y);
+char	obj_in_pos(t_game *game, int x, int y);
 /******** obj  ***********/
 void	draw_new_img(t_game g, int xy[2], char obj);
 /******** game ***********/

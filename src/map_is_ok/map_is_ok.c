@@ -6,22 +6,23 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 14:51:28 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:34:22 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-/* POR HACER */
-void free_game(t_game game)
-{
-	game.mlx = NULL;
-	printf("free_game. Primera funcion en map_is_ok\n");
-}
-void	err_exit_free_game(char *error, t_game game)
+// /* POR HACER PENDIENTE*/
+// void free_game(t_game *game)
+// {
+// 	ft_putstr_fd(2, "free_game\n");
+	
+// }
+
+void	err_exit_free_game(char *error, t_game *map)
 {
 	ft_putstr_fd(error, 2);
-	free_game(game);
+	free_map(map);
 	exit(-1);
 }
 
@@ -52,10 +53,11 @@ char	**map_is_ok(char *argv[], t_game game)
 	if (wall_ok(argv))
 		err_exit_olm("Error:\n-Map wall is not ok", one_line_map);
 	free(one_line_map);
-	if (flood_fill_ok(argv, get_map(argv)))
-		err_exit_free_game("Error:\n-Map doesn't have a solution", game); // free map
 	game.map = get_map(argv);
 	if (max_x_y_ok(game.map))
-		err_exit_free_game("Error:\n-Map so big", game); // free map
+		err_exit_free_game("Error:\n-Map so big", game.map); // free map
+	game.map = get_map(argv);
+	if (flood_fill_ok(argv, game.map))
+		err_exit_free_game("Error:\n-Map doesn't have a solution", &game); // free map
 	return (game.map);
 }
