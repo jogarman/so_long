@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:51:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/22 14:07:02 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:35:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,21 @@ void	draw_map(t_img img, char **map, mlx_t* mlx)
 			if (map[y][x] == '0')
 				mlx_image_to_window(mlx, img.floor, x * CAVAS_SIZE, y * CAVAS_SIZE);
 			if (map[y][x] == 'C')
+			{
+				mlx_image_to_window(mlx, img.floor, x * CAVAS_SIZE, y * CAVAS_SIZE);
 				mlx_image_to_window(mlx, img.collectable, x * CAVAS_SIZE, y * CAVAS_SIZE);
+			}
 			if (map[y][x] == 'E')
+			{
+				mlx_image_to_window(mlx, img.floor, x * CAVAS_SIZE, y * CAVAS_SIZE);
 				mlx_image_to_window(mlx, img.exit, x * CAVAS_SIZE, y * CAVAS_SIZE);
+				img.exit->enabled = 0;
+			}
 			if (map[y][x] == 'P')
+			{
+				mlx_image_to_window(mlx, img.floor, x * CAVAS_SIZE, y * CAVAS_SIZE);
 				mlx_image_to_window(mlx, img.hero, x * CAVAS_SIZE, y * CAVAS_SIZE);
+			}
 			x++;
 		}
 		y++;

@@ -5,7 +5,7 @@ LIBMLX	= ./MLX42
 CC = gcc
 ARFLAGS = -rcs
 AR = ar
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -g3 -fsanitize=address #-Wall -Wextra -Werror 
 HEADERS	:= -I ./include -I $(LIBMLX)/include/MLX42   # el primer include es redundante
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
@@ -22,6 +22,7 @@ src/map_is_ok/is_map_null.c src/map_is_ok/map_is_ok.c src/map_is_ok/no_strange_o
 src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wall_is_ok.c \
 src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c\
 \
+src/keyhook/keyhook.c src/keyhook/move_hero.c src/keyhook/try_to_move.c \
 src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
 \
 src/draw/draw_new_img.c\

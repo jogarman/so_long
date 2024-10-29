@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/22 15:08:22 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:08:16 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_img
 {
 	void	*hero;
 	void	*collectable;
-	void	*exit;
+	mlx_image_t	*exit;
 	void	*wall;
 	void	*floor;
 } t_img;
@@ -63,6 +63,12 @@ char	**get_map(char *argv[]);
 int		get_obj_pos(char **map, char object, char c);
 void	free_map(char **map);
 char	obj_in_pos(t_game *game, int x, int y);
+
+/******  keyhook *********/
+void	keyhook(mlx_key_data_t keydata, void *params);
+void	move_hero(t_game *g, int x, int y, char obj_next_pos);
+int		try_to_mv(t_game *game, char direction);
+
 /******** obj  ***********/
 void	draw_new_img(t_game g, int xy[2], char obj);
 /******** game ***********/
@@ -74,7 +80,7 @@ void	print_map(char **map); //se usa?
 //int		get_n_rows(char *map);
 
 /*****  map_is_ok  ********/
-char	**map_is_ok(char *argv[], t_game game);
+char	**map_is_ok(char *argv[], t_game *game);
 int		no_strange_obj(char	*map);
 int		is_map_null(char *map);
 int		ok_number_c_e_p(char *map);

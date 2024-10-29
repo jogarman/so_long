@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:49:31 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 14:47:02 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:43:08 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	**get_map(char *argv[])
 	int		i;
 
 	map = ft_calloc(get_n_lines(argv) + 1, sizeof(char *));
+	//TODO protect
 	fd = ft_open(argv[1]);
 	i = 0;
     while ((line = get_next_line(fd)) != NULL && line[0] != '\n')
@@ -55,7 +56,7 @@ char	**get_map(char *argv[])
         free(line);
     }
     close(fd);
-    return map;
+    return (map);
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:22:16 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/16 16:15:16 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/29 16:33:43 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	get_initial_parameters(t_game *game)
 	game->p_pos[0] = get_obj_pos(game->map, 'P', 'x');
 	game->p_pos[1] = get_obj_pos(game->map, 'P', 'y');
 	game->n_collectables = get_n_collectables(game->map);
-	if (game->n_collectables = 0)
+	game->n_moves = 0;
+	if (game->n_collectables == 0)
 		game->exit_enable = 1;
 	else
 		game->exit_enable = 0;
