@@ -6,18 +6,18 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/29 17:15:08 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:39:50 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "so_long.h"
 
-
-/* continuar con contar los n_collectables
-hacer visibble la exit
-hacer rutina de terminar */
-
+/*
+corregir errores al hacer make.
+finalizar el juego cuando alcanzo salida
+quitar leaks y problemas varios
+*/
 int32_t	main(int argc, char *argv[])
 {
 	t_img 		img;

@@ -20,9 +20,11 @@ SRC = main.c \
 \
 src/map_is_ok/is_map_null.c src/map_is_ok/map_is_ok.c src/map_is_ok/no_strange_obj.c \
 src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wall_is_ok.c \
-src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c\
+src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c \
 \
 src/keyhook/keyhook.c src/keyhook/move_hero.c src/keyhook/try_to_move.c \
+src/keyhook/subs_n_collectables \
+\
 src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
 \
 src/draw/draw_new_img.c\
@@ -36,7 +38,7 @@ src/ft_open.c src/get_map.c src/get_obj_pos.c src/free_map.c \
 \
 src/end_program.c src/obj_in_pos.c\
 \
-src/print_map.c 
+src/print_map.c src/print_arr_pos_col.c
 
 all: $(NAME)
 $(NAME):  $(OBJ) $(LIBFT) libmlx

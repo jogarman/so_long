@@ -6,12 +6,11 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:58:55 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 07:49:21 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/30 16:19:52 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
-//	printf("\nhola\n");
 
 t_img	load_img(mlx_t* mlx)
 {
