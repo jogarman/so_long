@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 21:39:50 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:59:02 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ quitar leaks y problemas varios
 */
 int32_t	main(int argc, char *argv[])
 {
-	t_img 		img;
 	t_game		game;
 	
 	n_arguments_ok(argc);
@@ -31,8 +30,6 @@ int32_t	main(int argc, char *argv[])
 
 	game.images = load_img(game.mlx);
 	draw_map(game.images, game.map, game.mlx);
-
 	mlx_key_hook(game.mlx, &keyhook, &game);
 	mlx_loop(game.mlx);
-	mlx_terminate(game.mlx);
 }

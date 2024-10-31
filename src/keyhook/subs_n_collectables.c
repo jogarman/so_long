@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:13:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 21:37:40 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:20:12 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	enabling_exit(t_game *game)
 {
 	int		exit_pos[2];
-	t_list *list = NULL;
 
 	game->images.exit->enabled = 1;
 	exit_pos[0] = get_obj_pos(game->map, 'E', 'x');
@@ -24,12 +23,12 @@ void	enabling_exit(t_game *game)
 		exit_pos[0] * CAVAS_SIZE, exit_pos[1] * CAVAS_SIZE);
 }
 
-/* is position in array? 
-n_col_ini: lenght of array*/
+/* is x-y position in array? 
+n_col_ini: lenght of array  */
 int		pos_is_in_arr(t_collect_pos	*arr_pos_col, int x, int y, int n_col_ini)
 {
 	int	n;
-
+	
 	n = 0;
 	while(n != n_col_ini)
 	{

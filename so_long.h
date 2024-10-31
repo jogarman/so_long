@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 21:38:57 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:21:44 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct s_collect_pos
 	int	*pos_col[2];
 }	t_collect_pos;
 
-typedef struct s_game 
+typedef struct s_game
 {
 	mlx_t			*mlx;
 	t_img			images;
@@ -56,8 +56,6 @@ typedef struct s_game
 	int				n_moves;
 	t_collect_pos	*arr_pos_col;
 }	t_game;
-
-
 
 /*****  one_time_files ******/
 size_t	get_n_lines(char *argv[]);
@@ -108,3 +106,7 @@ int		max_x_y_ok(char** map);
 void	draw_map(t_img img, char **map, mlx_t* mlx);
 t_img	load_img(mlx_t* mlx);
 mlx_t*	create_window(char* title, char** map);
+
+
+
+void	finish_game(t_game *game, int success); // poner en un archiv  aparte y makefile

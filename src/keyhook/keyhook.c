@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:59:24 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 16:50:47 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:26:45 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	keyhook(mlx_key_data_t keydata, void *params)
 		&& keydata.action == MLX_PRESS)
 		try_to_mv(game, 'd');
 	if ((keydata.key == MLX_KEY_ESCAPE))
-		mlx_close_window(game->mlx);
+		finish_game(game, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:07:11 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 16:51:13 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:27:25 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ void	try_to_mv(t_game *game, char direction)
 	}
 	obj_next_pos = obj_in_pos(game, desired_next_xy[0], desired_next_xy[1]);
 	move_hero(game, desired_next_xy[0], desired_next_xy[1], obj_next_pos);
-
 }

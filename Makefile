@@ -23,7 +23,7 @@ src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wal
 src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c \
 \
 src/keyhook/keyhook.c src/keyhook/move_hero.c src/keyhook/try_to_move.c \
-src/keyhook/subs_n_collectables \
+src/keyhook/subs_n_collectables.c \
 \
 src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
 \
