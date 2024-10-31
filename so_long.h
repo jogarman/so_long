@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 17:21:44 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 18:15:57 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_img
 
 typedef struct s_collect_pos
 {
-	int	*pos_col[2];
+	int	pos_col[2];
 }	t_collect_pos;
 
 typedef struct s_game
@@ -77,8 +77,6 @@ void	move_hero(t_game *g, int x, int y, char obj_next_pos);
 void	try_to_mv(t_game *game, char direction);
 void	subs_n_collectables(t_game *game, int x, int y);
 
-/******** obj  ***********/
-void	draw_new_img(t_game g, int xy[2], char obj);
 /******** game ***********/
 void	end_program(t_game game);
 
@@ -97,7 +95,7 @@ int		ok_number_c_e_p(char *map);
 int		is_rectangular(char *argv[]);
 int		wall_ok(char *argv[]);
 int		no_empty_lines(char *one_line_map);
-int		flood_fill_ok(char *argv[], char **map);
+int		flood_fill_ok(char **map);
 int		name_is_ok(char *prog_name);
 char	**get_2_dimensions_map(char *argv[]);
 int		max_x_y_ok(char** map);

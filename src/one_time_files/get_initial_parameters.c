@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:22:16 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/30 20:49:24 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:37:12 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int		get_n_collectables(char **map)
 void	create_arr_collectables(t_game *game)
 {
 	int	n;
-	int	arr[2];
 
 	game->n_collectables_ini = game->n_collectables;
 	game->arr_pos_col = malloc((game->n_collectables) * sizeof(t_collect_pos));

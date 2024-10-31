@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 16:24:51 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:38:44 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ char	**map_is_ok(char *argv[], t_game *game)
 	game->map = get_map(argv);
 	if (max_x_y_ok(game->map))
 		err_exit_free_game("Error:\n-Map so big", game->map);
+	free_map(game->map);
 	game->map = get_map(argv);
-	if (flood_fill_ok(argv, game->map))
+	if (flood_fill_ok(game->map))
 		err_exit_free_game("Error:\n-Map doesn't have a solution", game->map);
 	game->map = get_map(argv);
 	return 0;

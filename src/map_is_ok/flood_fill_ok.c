@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:32:04 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/15 08:19:22 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:33:16 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_xy_within_limits(char **map, int x, int y)
 {
-	if (y >= y_max_arr((const char **)map))
+	if (y >= y_max_arr((char **)map))
 	{
 		ft_putstr_fd("check_y_in_limits failed", 2);
 		exit (-1);
@@ -84,7 +84,7 @@ int	how_many_obj_in_map(char **map, char obj)
 It modifies and free the map, cause is not going to be 
 used anymore
 */
-int	flood_fill_ok(char *argv[], char **map)
+int	flood_fill_ok(char **map)
 {
 	int		x;
 	int		y;

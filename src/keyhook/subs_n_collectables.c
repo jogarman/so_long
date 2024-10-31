@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:13:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 17:20:12 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:28:56 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void	add_pos_to_arr(t_collect_pos *arr_pos_col, int x, int y, int n_col_ini)
 {
 	int	n;
 	
-   if (n_col_ini <= 0)
-        return;
 	n = 0;
 	while(arr_pos_col[n].pos_col[0] != -1)
 	{
