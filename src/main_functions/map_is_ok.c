@@ -6,18 +6,11 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 17:38:44 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:14:24 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
-
-// /* POR HACER PENDIENTE*/
-// void free_game(t_game *game)
-// {
-// 	ft_putstr_fd(2, "free_game\n");
-	
-// }
 
 void	err_exit_free_game(char *error, char **map)
 {
@@ -36,6 +29,7 @@ void	err_exit_olm(char *error, char *one_line_map)
 char	**map_is_ok(char *argv[], t_game *game)
 {
 	char	*one_line_map;
+	//t_game	game_copy;
 
 	one_line_map = get_one_line_map(argv, 3);
 	if (name_is_ok(argv[1]))
@@ -62,4 +56,5 @@ char	**map_is_ok(char *argv[], t_game *game)
 		err_exit_free_game("Error:\n-Map doesn't have a solution", game->map);
 	game->map = get_map(argv);
 	return 0;
+	
 }

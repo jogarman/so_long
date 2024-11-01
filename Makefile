@@ -18,26 +18,39 @@ OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 SRC = main.c \
 \
-src/map_is_ok/is_map_null.c src/map_is_ok/map_is_ok.c src/map_is_ok/no_strange_obj.c \
-src/map_is_ok/ok_number_c_e_p.c src/map_is_ok/is_rectangular.c src/map_is_ok/wall_is_ok.c \
-src/map_is_ok/get_2_dimensions_map.c src/map_is_ok/max_x_y_ok.c \
+src/free/finish_game.c \
+src/free/free_map.c \
 \
-src/keyhook/keyhook.c src/keyhook/move_hero.c src/keyhook/try_to_move.c \
+src/main_functions/get_initial_parameters.c \
+src/main_functions/map_is_ok.c \
+src/main_functions/n_arguments_ok.c \
+src/main_functions/create_window.c \
+src/main_functions/draw_map.c \
+src/main_functions/load_img.c \
+\
+src/map_is_ok/is_map_null.c \
+src/map_is_ok/no_strange_obj.c \
+src/map_is_ok/ok_number_c_e_p.c \
+src/map_is_ok/is_rectangular.c \
+src/map_is_ok/wall_is_ok.c \
+src/map_is_ok/get_2_dimensions_map.c \
+src/map_is_ok/max_x_y_ok.c \
+src/map_is_ok/no_empty_lines.c \
+src/map_is_ok/flood_fill_ok.c \
+src/map_is_ok/name_is_ok.c \
+src/map_is_ok/get_one_line_map.c \
+src/map_is_ok/ft_open.c \
+\
+src/keyhook/keyhook.c \
+src/keyhook/move_hero.c \
+src/keyhook/try_to_move.c \
 src/keyhook/subs_n_collectables.c \
 \
-src/map_is_ok/no_empty_lines.c src/map_is_ok/flood_fill_ok.c src/map_is_ok/name_is_ok.c \
-\
-src/one_time_files/load_img.c src/one_time_files/create_window.c src/one_time_files/draw_map.c \
-src/one_time_files/get_initial_parameters.c\
-\
-src/one_time_files/get_n_lines.c src/one_time_files/get_one_line_map.c \
-src/one_time_files/n_arguments_ok.c src/one_time_files/y_max_arr.c \
-\
-src/ft_open.c src/get_map.c src/get_obj_pos.c src/free_map.c \
-\
-src/end_program.c src/obj_in_pos.c\
-\
-src/print_map.c src/print_arr_pos_col.c
+src/unclasified/get_map.c \
+src/unclasified/get_n_lines.c \
+src/unclasified/y_max_arr.c \
+src/unclasified/get_obj_pos.c \
+src/unclasified/print_map.c
 
 all: $(NAME)
 $(NAME):  $(OBJ) $(LIBFT) libmlx

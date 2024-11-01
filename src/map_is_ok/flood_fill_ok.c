@@ -6,13 +6,13 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:32:04 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 17:33:16 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 13:10:36 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int	check_xy_within_limits(char **map, int x, int y)
+static int	check_xy_within_limits(char **map, int x, int y)
 {
 	if (y >= y_max_arr((char **)map))
 	{
@@ -28,7 +28,7 @@ int	check_xy_within_limits(char **map, int x, int y)
 }
 
 /* write c char in coordenates x & y*/
-int	put_in_pos(char **map, char c, int x, int y)
+static int	put_in_pos(char **map, char c, int x, int y)
 {	
 	if (check_xy_within_limits(map, x, y) == 0)
 	{ 
@@ -45,7 +45,7 @@ int	put_in_pos(char **map, char c, int x, int y)
 	exit(-1);
 }
 
-int	flood_fill_recurs(char **map, int x, int y)
+static int	flood_fill_recurs(char **map, int x, int y)
 {
 	if (put_in_pos(map, 'w', x, y) != -1)
 	{
@@ -57,7 +57,7 @@ int	flood_fill_recurs(char **map, int x, int y)
 	return 0;
 }
 
-int	how_many_obj_in_map(char **map, char obj)
+static int	how_many_obj_in_map(char **map, char obj)
 {
 	int	i;
 	int	j;
@@ -96,6 +96,8 @@ int	flood_fill_ok(char **map)
 	flood_fill_recurs(map, x, y);
 	n_exits = how_many_obj_in_map(map, 'E');
 	n_collectables = how_many_obj_in_map(map, 'C');
+	ft_putstr_fd("\033[32mleak aqui?\033[0m\n", 1);
+
 	if (n_exits == 0 && n_collectables == 0)
 	{
 		free_map(map);

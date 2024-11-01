@@ -6,11 +6,16 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:07:11 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 15:27:25 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:34:24 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
+
+static char	obj_in_pos(t_game *game, int x, int y)
+{
+	return(game->map[y][x]);
+}
 
 /*
 move_hero funtion:
@@ -23,7 +28,7 @@ inputs
 - Salir
 - No ir a pared
 */
-void	try_to_mv(t_game *game, char direction)
+void		try_to_mv(t_game *game, char direction)
 {
 	int		desired_next_xy[2];
 	char	obj_next_pos;

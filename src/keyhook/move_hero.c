@@ -6,41 +6,15 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:05:16 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 18:45:52 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 11:57:47 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-void	free_images(t_game *game)
-{
-	mlx_delete_image(game->mlx, game->images.hero);
-	mlx_delete_image(game->mlx, game->images.collectable);
-	mlx_delete_image(game->mlx, game->images.exit);
-	mlx_delete_image(game->mlx, game->images.wall);
-	mlx_delete_image(game->mlx, game->images.floor);
-}
-
-void	free_arr_pos_col(t_collect_pos *arr_pos_col)
-{
-	if (arr_pos_col != NULL)
-		free(arr_pos_col);
-}
-
-
-void	finish_game(t_game *game, int success)
-{
-	if (success == 1)
-		ft_putstr_fd("\033[32mCongrats! you won the game!\033[0m\n", 1);
-	free_map(game->map);
-	free_arr_pos_col(game->arr_pos_col);
-	free_images(game);
-	mlx_terminate(game->mlx);
-
-	exit(EXIT_SUCCESS);
-}
-
-/* x and y are the position to where you are moving the hero */
+/* 
+x and y are the position to where you are moving the hero 
+*/
 void	move_hero(t_game *g, int x, int y, char obj_next_pos)
 {
 	if (obj_next_pos == '0' || obj_next_pos == 'P' || obj_next_pos == 'C'

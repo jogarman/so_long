@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 18:15:57 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 12:42:59 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,38 +57,26 @@ typedef struct s_game
 	t_collect_pos	*arr_pos_col;
 }	t_game;
 
-/*****  one_time_files ******/
-size_t	get_n_lines(char *argv[]);
-int		y_max_arr(char **map);
-char	*get_one_line_map(char *argv[], int fd);
-void	n_arguments_ok(int argc);
-void	get_initial_parameters(t_game *game);
 
-/********  src ***********/
-int		ft_open(char *argv);
-char	**get_map(char *argv[]);
-int		get_obj_pos(char **map, char object, char c);
+/*****  free_finish    ******/
+void	finish_game(t_game *game, int success);
 void	free_map(char **map);
-char	obj_in_pos(t_game *game, int x, int y);
 
-/******  keyhook *********/
+/******  keyhook        *********/
 void	keyhook(mlx_key_data_t keydata, void *params);
 void	move_hero(t_game *g, int x, int y, char obj_next_pos);
 void	try_to_mv(t_game *game, char direction);
 void	subs_n_collectables(t_game *game, int x, int y);
 
-/******** game ***********/
-void	end_program(t_game game);
-
-
-/*****  not_used   ********/
-void	print_map(char **map); //se usa?
-void	print_arr_pos_col(t_collect_pos *arr_pos_col, int n_col_ini);
-
-//int		get_n_rows(char *map);
-
-/*****  map_is_ok  ********/
+/******  main_functions *********/
+mlx_t*	create_window(char* title, char** map);
+void	draw_map(t_img img, char **map, mlx_t* mlx);
+t_img	load_img(mlx_t* mlx);
+void	get_initial_parameters(t_game *game);
 char	**map_is_ok(char *argv[], t_game *game);
+void	n_arguments_ok(int argc);
+
+/*****  map_is_ok  **********/
 int		no_strange_obj(char	*map);
 int		is_map_null(char *map);
 int		ok_number_c_e_p(char *map);
@@ -99,12 +87,12 @@ int		flood_fill_ok(char **map);
 int		name_is_ok(char *prog_name);
 char	**get_2_dimensions_map(char *argv[]);
 int		max_x_y_ok(char** map);
+char	*get_one_line_map(char *argv[], int fd);
+int		ft_open(char *argv);
 
-/*****  draw_map  ********/
-void	draw_map(t_img img, char **map, mlx_t* mlx);
-t_img	load_img(mlx_t* mlx);
-mlx_t*	create_window(char* title, char** map);
-
-
-
-void	finish_game(t_game *game, int success); // poner en un archiv  aparte y makefile
+/********  unclasified ***********/
+char	**get_map(char *argv[]);
+int		get_obj_pos(char **map, char object, char c);
+void	print_map(char **map);
+int		y_max_arr(char **map);
+size_t	get_n_lines(char *argv[]);

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 00:10:41 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 14:53:43 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/30 01:14:05 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/11/01 12:35:37 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-void	free_map(char **map)
+void	print_map(char **map)
 {
-	int	i;
-	
+	int i;
+	if (map[0] == NULL || map == NULL)
+	{
+		ft_putstr_fd("print_map: map is null", 2);
+		exit(1);
+	}
 	i = 0;
-	if (!map) 
-		return ;
-	while (map[i])
-		free(map[i++]);
-	free(map);
+	while (map[i] != NULL)
+	{
+		write(1, map[i], ft_strlen(map[i]));
+		i++;
+	}
+	write(1, "\n", 1);
 }

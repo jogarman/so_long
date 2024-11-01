@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_map.c                                        :+:      :+:    :+:   */
+/*   ft_open.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/30 01:14:05 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/29 15:31:47 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/05/26 15:55:20 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/11/01 12:31:35 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
-
-void	print_map(char **map)
+/*	fd = ft_open(argv[1]); */
+int	ft_open(char *name)
 {
-	int i;
-	if (map[0] == NULL || map == NULL)
+	int	fd;
+	
+	if ((fd = open(name, O_RDONLY)) < 0)
 	{
-		ft_putstr_fd("print_map: map is null", 2);
-		exit(1);
+		perror("Error\nFile can not be open");
+		exit(EXIT_FAILURE);
 	}
-	i = 0;
-	while (map[i] != NULL)
-	{
-		write(1, map[i], ft_strlen(map[i]));
-		i++;
-	}
-	write(1, "\n", 1);
+	return (fd);
 }
