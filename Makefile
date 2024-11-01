@@ -6,7 +6,7 @@ CC = gcc
 ARFLAGS = -rcs
 AR = ar
 CFLAGS = -g3 -Wall -Wextra -Werror #-fsanitize=address 
-HEADERS	:= -I ./include -I $(LIBMLX)/include/MLX42   # el primer include es redundante
+HEADERS	:= -I $(LIBMLX)/include/MLX42
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 
 BOLD = \033[1m
@@ -20,6 +20,7 @@ SRC = main.c \
 \
 src/free/finish_game.c \
 src/free/free_map.c \
+src/free/free_arr_pos_col.c \
 \
 src/main_functions/get_initial_parameters.c \
 src/main_functions/map_is_ok.c \

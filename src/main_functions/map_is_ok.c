@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:15 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 16:03:32 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:33:21 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,23 @@ void	err_exit_free_game(char *error)
 	exit(-1);
 }
 
+/**
+ * @brief Displays error and free One_Line_Map
+ * 
+ * @param error error to display
+ * @param one_line_map variable to free
+ */
 void	err_exit_olm(char *error, char *one_line_map)
 {
 	ft_putstr_fd(error, 2);
 	free(one_line_map);
 	exit(-1);
 }
-
+/**
+ * @brief Check if map is ok
+ * 
+ * if fails, finish the game
+ */
 void	map_is_ok(char *argv[], t_game *game)
 {
 	char	*one_line_map;

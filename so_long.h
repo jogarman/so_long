@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 15:56:48 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:28:03 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <string.h>
 # include <sys/wait.h>
 # include "libft/libft.h"
-# include "MLX42/include/MLX42/MLX42.h"
-//# include "MLX42.h"
+# include "MLX42.h"
 
 #define CAVAS_SIZE 64
 
@@ -61,6 +60,7 @@ typedef struct s_game
 /*****  free_finish    ******/
 void	finish_game(t_game *game, int success);
 void	free_map(char **map);
+void	free_arr_pos_col(t_collect_pos *arr_pos_col);
 
 /******  keyhook        *********/
 void	keyhook(mlx_key_data_t keydata, void *params);
@@ -71,7 +71,7 @@ void	subs_n_collectables(t_game *game, int x, int y);
 /******  main_functions *********/
 mlx_t*	create_window(char* title, char** map);
 void	draw_map(t_img img, char **map, mlx_t* mlx);
-t_img	load_img(mlx_t* mlx);
+t_img	load_img(mlx_t* mlx, t_game *game);
 void	get_initial_parameters(t_game *game);
 void	map_is_ok(char *argv[], t_game *game);
 void	n_arguments_ok(int argc);

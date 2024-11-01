@@ -6,17 +6,11 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:28:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:57:05 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 16:21:39 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
-
-static void error(void)
-{
-	puts(mlx_strerror(mlx_errno));
-	exit(EXIT_FAILURE);
-}
 
 mlx_t* create_window(char* title, char** map)
 {
@@ -29,6 +23,9 @@ mlx_t* create_window(char* title, char** map)
 	
 	mlx = mlx_init(height, width, title, false);
 	if (!mlx)
-		error();
+	{
+		ft_putstr_fd((char *)mlx_strerror(mlx_errno), 2);
+		exit(EXIT_FAILURE);
+	}
 	return (mlx);
 }

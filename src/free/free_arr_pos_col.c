@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   n_arguments_ok.c                                   :+:      :+:    :+:   */
+/*   free_arr_pos_col.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 17:38:07 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 16:11:51 by jgarcia3         ###   ########.fr       */
+/*   Created: 2024/11/01 17:26:31 by jgarcia3          #+#    #+#             */
+/*   Updated: 2024/11/01 17:27:55 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-/* if number arguments ok, return 1, if not ok exit(-1)*/
-void	n_arguments_ok(int n)
+void	free_arr_pos_col(t_collect_pos *arr_pos_col)
 {
-	if (n != 2)
-	{
-		ft_putstr_fd("One argument must be provided\n", 2);
-		exit(EXIT_FAILURE);
-	}
+	if (arr_pos_col != NULL)
+		free(arr_pos_col);
 }

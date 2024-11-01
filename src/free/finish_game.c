@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:48:58 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:53:55 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 17:27:46 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ void	free_images(t_game *game)
 	mlx_delete_image(game->mlx, game->images.exit);
 	mlx_delete_image(game->mlx, game->images.wall);
 	mlx_delete_image(game->mlx, game->images.floor);
-}
-
-void	free_arr_pos_col(t_collect_pos *arr_pos_col)
-{
-	if (arr_pos_col != NULL)
-		free(arr_pos_col);
 }
 
 
