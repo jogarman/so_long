@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:32:04 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 13:10:36 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:58:19 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,6 @@ int	flood_fill_ok(char **map)
 	flood_fill_recurs(map, x, y);
 	n_exits = how_many_obj_in_map(map, 'E');
 	n_collectables = how_many_obj_in_map(map, 'C');
-	ft_putstr_fd("\033[32mleak aqui?\033[0m\n", 1);
-
 	if (n_exits == 0 && n_collectables == 0)
 	{
 		free_map(map);
