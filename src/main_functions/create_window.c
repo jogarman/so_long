@@ -6,21 +6,20 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:28:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 16:21:39 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:37:00 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-mlx_t* create_window(char* title, char** map)
+mlx_t	*create_window(char *title, char **map)
 {
-	mlx_t*	mlx;
+	mlx_t	*mlx;
 	int		height;
 	int		width;
-	
-	height = (ft_strlen(map[0]) - 1) * CAVAS_SIZE;
-	width = y_max_arr((char**)map) * CAVAS_SIZE;
-	
+
+	height = (ft_strlen(map[0]) - 1) * SIZE;
+	width = y_max_arr((char **)map) * SIZE;
 	mlx = mlx_init(height, width, title, false);
 	if (!mlx)
 	{

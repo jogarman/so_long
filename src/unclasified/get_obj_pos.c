@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 19:37:29 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:35:31 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:42:36 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,21 @@
 	-'x' or 'y' you want to return
 returns:
 	- x or y of object
-	- if doesn´t find it*/
-int get_obj_pos(char **map, char obj, char xy)
+	- if doesn´t find it 
+
+Original loop-> while (map_dup[y] != NULL
+&& (xy == 'y' || xy == 'x') && (obj == 'P' || obj == 'E'))
+*/
+int	get_obj_pos(char **map, char obj, char xy)
 {
 	int		y;
-	int 	x;
+	int		x;
 	char	**map_dup;
 
 	map_dup = map;
 	y = 0;
 	x = 0;
-	while (map_dup[y] != NULL && (xy == 'y' || xy == 'x') && (obj == 'P' || obj == 'E'))
+	while (map_dup[y] != NULL && (obj == 'P' || obj == 'E'))
 	{
 		while (map_dup[y][x] != '\0')
 		{
@@ -36,7 +40,6 @@ int get_obj_pos(char **map, char obj, char xy)
 				return (map_dup - map);
 			if (map_dup[y][x] == obj && xy == 'x')
 				return (x);
-			//printf("x: %d\n y: %d\n", x, y);
 			x++;
 		}
 		x = 0;

@@ -6,19 +6,19 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:05:13 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/29 19:50:47 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:59:24 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-int		ok_number_c_e_p(char *map)
+int	ok_number_c_e_p(char *map)
 {
 	int	i;
 	int	c;
 	int	e;
 	int	p;
-	
+
 	i = 0;
 	c = 0;
 	e = 0;
@@ -35,6 +35,6 @@ int		ok_number_c_e_p(char *map)
 	}
 	if (c > 0 && e == 1 && p == 1)
 		return (0);
-	else 
+	else
 		return (-1);
 }

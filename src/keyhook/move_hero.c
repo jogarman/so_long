@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:05:16 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 11:57:47 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:47:25 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ void	move_hero(t_game *g, int x, int y, char obj_next_pos)
 	{
 		mlx_image_to_window(
 			g->mlx, g->images.floor,
-			x * CAVAS_SIZE,
-			y * CAVAS_SIZE);
+			x * SIZE,
+			y * SIZE);
 		mlx_image_to_window(
 			g->mlx, g->images.hero,
-			x * CAVAS_SIZE,
-			y * CAVAS_SIZE);
+			x * SIZE,
+			y * SIZE);
 		mlx_image_to_window(
 			g->mlx, g->images.floor,
-			g->p_pos[0] * CAVAS_SIZE,
-			g->p_pos[1] * CAVAS_SIZE);
+			g->p_pos[0] * SIZE,
+			g->p_pos[1] * SIZE);
 		g->p_pos[0] = x;
 		g->p_pos[1] = y;
 		g->n_moves ++;

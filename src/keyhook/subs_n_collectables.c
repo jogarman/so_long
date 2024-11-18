@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 21:13:45 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/10/31 17:28:56 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:47:25 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,22 @@ void	enabling_exit(t_game *game)
 	game->images.exit->enabled = 1;
 	exit_pos[0] = get_obj_pos(game->map, 'E', 'x');
 	exit_pos[1] = get_obj_pos(game->map, 'E', 'y');
-	mlx_image_to_window(game->mlx, game->images.exit, 
-		exit_pos[0] * CAVAS_SIZE, exit_pos[1] * CAVAS_SIZE);
+	mlx_image_to_window(game->mlx, game->images.exit,
+		exit_pos[0] * SIZE, exit_pos[1] * SIZE);
 }
 
 /* is x-y position in array? 
 n_col_ini: lenght of array  */
-int		pos_is_in_arr(t_collect_pos	*arr_pos_col, int x, int y, int n_col_ini)
+int	pos_is_in_arr(t_collect_pos	*arr_pos_col, int x, int y, int n_col_ini)
 {
 	int	n;
-	
+
 	n = 0;
-	while(n != n_col_ini)
+	while (n != n_col_ini)
 	{
 		if (arr_pos_col[n].pos_col[0] == x)
 			if (arr_pos_col[n].pos_col[1] == y)
-			{
 				return (1);
-			}
 		n++;
 	}
 	return (0);
@@ -47,9 +45,9 @@ n_col_ini: lenght of array*/
 void	add_pos_to_arr(t_collect_pos *arr_pos_col, int x, int y, int n_col_ini)
 {
 	int	n;
-	
+
 	n = 0;
-	while(arr_pos_col[n].pos_col[0] != -1)
+	while (arr_pos_col[n].pos_col[0] != -1)
 	{
 		if (n == n_col_ini - 1)
 			return ;

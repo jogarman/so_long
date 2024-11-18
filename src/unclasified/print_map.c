@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 01:14:05 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:35:37 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:38:11 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	print_map(char **map)
 {
-	int i;
+	int	i;
+
 	if (map[0] == NULL || map == NULL)
 	{
 		ft_putstr_fd("print_map: map is null", 2);

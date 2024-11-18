@@ -6,17 +6,17 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:22:16 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:02:04 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:33:19 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-static int		get_n_collectables(char **map)
+static int	get_n_collectables(char **map)
 {
-	int		y;
-	int 	x;
-	int		n_collectables;
+	int	y;
+	int	x;
+	int	n_collectables;
 
 	y = 0;
 	x = 0;
@@ -25,7 +25,6 @@ static int		get_n_collectables(char **map)
 	{
 		while (map[y][x] != '\0')
 		{
-
 			if (map[y][x] == 'C')
 				n_collectables++;
 			x++;
@@ -36,7 +35,7 @@ static int		get_n_collectables(char **map)
 	return (n_collectables);
 }
 
-static void		create_arr_collectables(t_game *game)
+static void	create_arr_collectables(t_game *game)
 {
 	int	n;
 

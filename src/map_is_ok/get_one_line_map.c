@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:19:42 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/05/30 18:13:19 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:54:20 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_one_line_map(char *argv[], int fd)
 	char	*map;
 	char	*map_2;
 	int		first_loop;
-	
+
 	fd = ft_open(argv[1]);
 	map = "";
 	first_loop = 1;

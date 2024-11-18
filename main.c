@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 18:38:50 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:39:26 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "so_long.h"
 
 //img_to_window devuelve -1 si falla
-//search "alloc" y ver si están protegIDO
+//search "alloc" y ver si están protegido
 int	main(int argc, char *argv[])
 {
 	t_game		game;

@@ -5,7 +5,7 @@ LIBMLX	= ./MLX42
 CC = gcc
 ARFLAGS = -rcs
 AR = ar
-CFLAGS = -g3 -Wall -Wextra -Werror #-fsanitize=address 
+CFLAGS = -g3 -Wall -Wextra -Werror -fsanitize=address 
 HEADERS	:= -I $(LIBMLX)/include/MLX42
 LIBS	= $(LIBMLX)/build/libmlx42.a -ldl -lglfw -pthread -lm
 

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 19:11:47 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 15:12:43 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:54:00 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,12 @@ static	int	only_1_in_line(char *line)
 	return (0);
 }
 
-
-
-int			wall_ok(char *argv[])
+int	wall_ok(char *argv[])
 {
 	char	*line;
-	int 	fd;
+	int		fd;
 	char	*prev_line;
-	
+
 	fd = ft_open(argv[1]);
 	line = get_next_line(fd);
 	if (only_1_in_line(line) == -1)
@@ -44,7 +42,8 @@ int			wall_ok(char *argv[])
 		free(prev_line);
 		prev_line = ft_strdup(line);
 		free(line);
-		if ((line = get_next_line(fd)))
+		line = get_next_line(fd);
+		if (line)
 			if (line[0] != '1' || line[ft_strlen(line) - 2] != '1')
 				return (free(line), free(prev_line), close(fd), -1);
 	}

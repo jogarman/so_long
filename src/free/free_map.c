@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:10:41 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 13:21:42 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 12:25:51 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	free_map(char **map)
 {
 	int	i;
-	
+
 	i = 0;
-	if (!map) 
+	if (!map)
 		return ;
 	while (map[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:48:11 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 18:37:30 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:50:51 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_get_max(int s1, int s2)
 static int	ft_str_equals(const char *s1, const char *s2)
 {
 	return (!ft_strncmp(s1, s2, ft_get_max(ft_strlen(s1), ft_strlen(s2))));
-} 
+}
 
 /*
 Chech if name is something like:
@@ -44,7 +44,7 @@ static int	is_fourth_last_char_a_bar(char *map_name)
 	pos = ft_strlen(ptr);
 	if (pos == 5)
 	{
-		return 1;
+		return (1);
 	}
 	return (0);
 }
@@ -53,7 +53,7 @@ static int	is_fourth_last_char_a_bar(char *map_name)
 @returns 0  ok
 @returns -1 error
 */
-int			name_is_ok(char *map_name)
+int	name_is_ok(char *map_name)
 {
 	if (ft_str_equals(map_name, ".ber"))
 		return (-1);
@@ -61,7 +61,6 @@ int			name_is_ok(char *map_name)
 		return (-1);
 	else
 		return (0);
-
 }
 
 /*

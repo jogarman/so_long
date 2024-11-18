@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 17:28:03 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:51:08 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include "libft/libft.h"
 # include "MLX42.h"
 
-#define CAVAS_SIZE 64
+/* Cavas size*/
+#define SIZE 64
 
 typedef struct s_textures
 {
@@ -91,7 +92,7 @@ char	*get_one_line_map(char *argv[], int fd);
 int		ft_open(char *argv);
 
 /********  unclasified ***********/
-char	**get_map(char *argv[]);
+char	**get_map(char *argv[], int fd);
 int		get_obj_pos(char **map, char object, char c);
 void	print_map(char **map);
 int		y_max_arr(char **map);
