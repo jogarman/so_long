@@ -6,13 +6,12 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/12/02 14:35:01 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:38:13 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-//search "alloc" y ver si están protegido
 int	main(int argc, char *argv[])
 {
 	t_game		game;
