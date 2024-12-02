@@ -6,18 +6,18 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 01:18:39 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/11/01 12:15:59 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/12/02 11:36:20 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../so_long.h"
 
-size_t		get_n_lines(char *argv[])
+size_t	get_n_lines(char *argv[])
 {
 	char	*line;
 	size_t	n_lines;
 	int		first_loop;
-	int 	fd;
+	int		fd;
 
 	fd = ft_open(argv[1]);
 	n_lines = 0;
