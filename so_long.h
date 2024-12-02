@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:54:21 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/12/02 14:06:57 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/12/02 15:09:41 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	subs_n_collectables(t_game *game, int x, int y);
 
 /******  main_functions *********/
 mlx_t*	create_window(char* title, char** map);
-void	draw_map(t_game game);
+void	draw_map(t_game *game);
 t_img	load_img(mlx_t* mlx, t_game *game);
 void	get_initial_parameters(t_game *game);
 void	map_is_ok(char *argv[], t_game *game);

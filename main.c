@@ -6,7 +6,7 @@
 /*   By: jgarcia3 <jgarcia3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:41:38 by jgarcia3          #+#    #+#             */
-/*   Updated: 2024/12/02 14:38:13 by jgarcia3         ###   ########.fr       */
+/*   Updated: 2024/12/02 15:09:26 by jgarcia3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 	get_initial_parameters(&game);
 	game.mlx = create_window(argv[1], game.map);
 	game.images = load_img(game.mlx, &game);
-	draw_map(game);
+	draw_map(&game);
 	mlx_key_hook(game.mlx, &keyhook, &game);
 	mlx_loop(game.mlx);
 	finish_game(&game, 0);
